@@ -76,6 +76,7 @@
 
         let data = new Array(rcs + 1).fill(0).map(() => new Array(rcs + 1))
         const restart = () => {
+            buttonAudio()
             data = new Array(rcs + 1).fill(0).map(() => new Array(rcs + 1))
             cacheIndex = 0
             cacheData.length = 1
@@ -88,7 +89,9 @@
             if (gameOver) {
                 return
             }
-            playAudio()
+            const caudio = document.createElement('audio')
+            caudio.src = './ogg/pop.ogg'
+            caudio.play()
             const { offsetX, offsetY } = e
             const posi = getPostions(offsetX, offsetY, gap, padding, radius)
             if (posi && !data[posi[0]][posi[1]]) {
@@ -98,7 +101,11 @@
                 const res = isOver(data, posi)
                 if (res) {
                     gameOver = true
+                    const waudio = document.createElement('audio')
+                    waudio.src = './ogg/levelup.ogg'
+                    waudio.play()
                     setTimeout(() => {
+                        
                         if (current == 1) {
                             const msg = res ? "黄棋胜利！" : "平局！";
                             alert('游戏结束：' + msg)
@@ -308,6 +315,7 @@
             cacheIndex++
         }
         const popStack = () => {
+            buttonAudio()
             if (cacheIndex && !gameOver) {
                 data = cloneDeep(cacheData[--cacheIndex])
                 cacheData.length = cacheIndex + 1
@@ -317,12 +325,11 @@
             }
         }
 
-        function playAudio() {
-            const audio = document.createElement('audio')
-            audio.src = './wav/marking.wav'
-            audio.play()
+        function buttonAudio() {
+            const baudio = document.createElement('audio')
+            baudio.src = './ogg/click.ogg'
+            baudio.play()
         }
-
 
         function init() {
             canvasRef.width = 640
