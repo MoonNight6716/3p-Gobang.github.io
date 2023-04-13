@@ -49,6 +49,23 @@
             font-size: 1.25em;
         }
     </style>
+    <script>
+      function buttonAudio() {
+        const baudio = document.createElement('audio')
+        baudio.src = './ogg/click.ogg'
+        baudio.play()
+      }
+      function winAudio() {
+        const waudio = document.createElement('audio')
+        waudio.src = './ogg/levelup.ogg'
+        waudio.play()
+      }
+      function clickAudio() {
+        const caudio = document.createElement('audio')
+        caudio.src = './ogg/pop.ogg'
+        caudio.play()
+      }
+    </script>
   </head>
   <body>
     <div class="gobang">
@@ -89,9 +106,7 @@
             if (gameOver) {
                 return
             }
-            const caudio = document.createElement('audio')
-            caudio.src = './ogg/pop.ogg'
-            caudio.play()
+            clickAudio()
             const { offsetX, offsetY } = e
             const posi = getPostions(offsetX, offsetY, gap, padding, radius)
             if (posi && !data[posi[0]][posi[1]]) {
@@ -101,11 +116,8 @@
                 const res = isOver(data, posi)
                 if (res) {
                     gameOver = true
-                    const waudio = document.createElement('audio')
-                    waudio.src = './ogg/levelup.ogg'
-                    waudio.play()
+                    winAudio()
                     setTimeout(() => {
-                        
                         if (current == 1) {
                             const msg = res ? "黄棋胜利！" : "平局！";
                             alert('游戏结束：' + msg)
@@ -323,12 +335,6 @@
                 else current -= 2
                 init()
             }
-        }
-
-        function buttonAudio() {
-            const baudio = document.createElement('audio')
-            baudio.src = './ogg/click.ogg'
-            baudio.play()
         }
 
         function init() {
