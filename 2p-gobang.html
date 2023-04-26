@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title id="gobangTitle"> · 两人五子棋 · </title>
+    <link rel="icon" href="./assets/icon.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="gobang">
+      <div class="gobangHeader">
+        <span class="gobangTips">当前：黑子</span>
+        <div class="gobangBtns">
+            <button class="gobangBtn" id="btnhome" onclick="home()">首页</button>
+            <button class="gobangBtn" id="btnrestart" onclick="restart()">重新开始</button>
+            <button class="gobangBtn" id="btnpop" :disabled="!cacheIndex || gameOver" onclick="popStack()">悔棋</button>
+            <button class="gobangBtn" id="zhen" onclick="ZhEn()"><strong>中</strong>/<small>En</small></button>
+        </div>
+      </div>
+      <canvas id="my-canvas" width="640" height="640" onclick="canvasClick(event)"></canvas>
+    </div>
+    <script src="./js/gobang.js"></script>
+    <script>
+      init()
+      gameModel2p()
+      showLanguage()
+    </script>
+  </body>
+</html>

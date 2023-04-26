@@ -1,0 +1,83 @@
+/* 字体 */
+@font-face {
+    font-family: 'nightfont';
+    src: url('../assets/font.ttf');
+}
+
+/* 首页 */
+.home {
+    width: 520px;
+    margin: 0 auto;
+    background-color: rgb(102, 102, 102);
+    border-radius: 10px;
+}
+.homeHeader {
+    margin-bottom: 5px;
+    display: flex;
+    padding: 0 5px;
+    text-align: center;
+}
+.homeH1 {
+    font-family: 'nightfont';
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0;
+    font-size: 5em;
+    color: #ffffff;
+}
+.homeBody {
+    text-align: center;
+}
+.homeBtn {
+    border: none;
+    height: 1.5em;
+    width: 7em;
+    background-color: #323232;
+    color: #ffffff;
+    font-family: 'nightfont';
+    border-radius: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    font-size: 3em;
+}
+.homeBtn:hover {
+    background-color: #1f1f1f;
+    font-weight: bold;
+}
+
+/* 五子棋 */
+.gobang {
+    width: 640px;
+    margin: 0 auto;
+}
+.gobangHeader {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.gobangHeader .gobangBtns button {
+    margin-left: -3px;
+    padding: 0 5px;
+}
+#my-canvas {
+    background-color: #323232;
+    border-radius: 4px;
+}
+.gobangTips {
+    font-family: 'nightfont';
+    font-size: 1.5em;
+}
+.gobangBtn {
+    border: none;
+    height: 1.5em;
+    background-color: #323232;
+    color: #ffffff;
+    border-radius: 0.5em;
+    font-family: 'nightfont';
+    font-size: 1.25em;
+}
+.gobangBtn:hover {
+    background-color: #1f1f1f;
+    font-weight: bold;
+}

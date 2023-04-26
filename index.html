@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Moon Night 6716</title>
+    <link rel="icon" href="./assets/icon.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="home">
+        <div class="homeHeader">
+            <span class="homeH1"><strong>Moon Night</strong></span>
+        </div>
+        <div class="homeBody">
+            <button class="homeBtn" id="2pgb" onclick="IIpGobang()">2p Gobang</button>
+            <button class="homeBtn" id="3pgb" onclick="IIIpGobang()">3p Gobang</button>
+        </div>
+    </div>
+    <script>
+      let langs = navigator.language || navigator.userLanguage
+      let lang = langs.substr(0, 2)
+      function showLanguage() {
+        if (lang == 'zh') {
+          document.getElementById('2pgb').innerHTML = '双人五子棋'
+          document.getElementById('3pgb').innerHTML = '三人五子棋'
+        } else {
+          document.getElementById('2pgb').innerHTML = '2p Gobang'
+          document.getElementById('3pgb').innerHTML = '3p Gobang'
+        }
+      }
+      showLanguage()
+    </script>
+  </body>
+</html>
